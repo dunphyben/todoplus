@@ -24,7 +24,8 @@ class MasterViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
     var objects = [Task]()
-    
+    var folders = [Folder]()
+    var happy = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +41,7 @@ class MasterViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -64,20 +66,56 @@ class MasterViewController: UITableViewController {
                 alert.dismissViewControllerAnimated(true) {}
         }
         alert.addAction(cancelAction)
+        
         let createAction = UIAlertAction(title: "Create",
             style: .Default) { action in
+                
                 let textField = alert.textFields[0] as UITextField
                 self.addTask(Task(name: textField.text))
+                
+                self.insertNewFolder()
+                
         }
         alert.addAction(createAction)
+
         presentViewController(alert, animated: true) {}
+        
+    }
+    
+    func insertNewFolder() {
+        let folderAlert = UIAlertController(title: "New Folder",
+            message: "",
+            preferredStyle: .Alert)
+        folderAlert.addTextFieldWithConfigurationHandler{ textField in
+            textField.placeholder = "Business"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel",
+            style: .Default) { action in
+                folderAlert.dismissViewControllerAnimated(true) {}
+        }
+        folderAlert.addAction(cancelAction)
+        let folderCreateAction = UIAlertAction(title: "Create",
+            style: .Default) { action in
+                
+                let folderTextField = folderAlert.textFields[0] as UITextField
+                self.addFolder(Folder(name: "folder" + folderTextField.text))
+        }
+        folderAlert.addAction(folderCreateAction)
+        presentViewController(folderAlert, animated: true) {}
     }
     
     func addTask(task: Task) {
         objects += task
-        let indexPath = NSIndexPath(forRow: objects.count - 1, inSection: 0)
+        let indexPath = NSIndexPath(forRow: objects.count - 1 + folders.count - 1, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
+    
+    func addFolder(folder: Folder) {
+        folders += folder
+        let indexPath = NSIndexPath(forRow: objects.count - 1 + folders.count - 1, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    }
+    
     
     // #pragma mark - Segues
     

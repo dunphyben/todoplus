@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0489E8AE1974CAE900176ACA /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489E8AD1974CAE900176ACA /* Folder.swift */; };
 		B5BC6B741971AC45007D3470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC6B731971AC45007D3470 /* AppDelegate.swift */; };
 		B5BC6B761971AC45007D3470 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC6B751971AC45007D3470 /* MasterViewController.swift */; };
 		B5BC6B781971AC45007D3470 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC6B771971AC45007D3470 /* DetailViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0489E8AD1974CAE900176ACA /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		B5BC6B6E1971AC45007D3470 /* SwiftClassTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftClassTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BC6B721971AC45007D3470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5BC6B731971AC45007D3470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				B5BC6B731971AC45007D3470 /* AppDelegate.swift */,
 				B5BC6B751971AC45007D3470 /* MasterViewController.swift */,
 				B5BC6B931971B408007D3470 /* Task.h */,
+				0489E8AD1974CAE900176ACA /* Folder.swift */,
 				B5BC6B941971B408007D3470 /* Task.m */,
 				B5BC6B771971AC45007D3470 /* DetailViewController.swift */,
 				B5BC6B791971AC45007D3470 /* Main.storyboard */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BC6B951971B408007D3470 /* Task.m in Sources */,
+				0489E8AE1974CAE900176ACA /* Folder.swift in Sources */,
 				B5BC6B781971AC45007D3470 /* DetailViewController.swift in Sources */,
 				B5BC6B761971AC45007D3470 /* MasterViewController.swift in Sources */,
 				B5BC6B741971AC45007D3470 /* AppDelegate.swift in Sources */,
@@ -414,6 +418,7 @@
 				B5BC6B8E1971AC45007D3470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5BC6B8F1971AC45007D3470 /* Build configuration list for PBXNativeTarget "SwiftClassTodoTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				B5BC6B911971AC45007D3470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
